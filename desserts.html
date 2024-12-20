@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts - COOKBOOK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-size: cover;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0,0.1);
+        } 
+
+        .container img {
+            width: 90px;
+            height: 60px;
+            left: 50px;
+            top: 8px;
+            position: absolute;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 40px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            padding-bottom: 50px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+        }
+
+        .content-wrapper h1 {
+            font-size: 5em;
+            margin-bottom: 40px;
+        }
+
+        .recipe-grid {
+            display: flex;
+            flex-direction: column; 
+            gap: 30px;
+            align-items: center;
+        }
+
+        .recipe-card {
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+            width: 80%;
+            max-width: 800px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .recipe-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .recipe-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-info {
+            padding: 20px;
+            text-align: left;
+            flex: 1;
+        }
+
+        .recipe-info h3 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: #000;
+        }
+
+        .recipe-info p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        footer {
+            width: 100%;
+            background-color: grey;
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+            padding: 5px; 
+            position: fixed;
+            top: 0;
+            width: 100%; 
+            z-index: 1000;
+            transition: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .container img {
+            width: 60px;
+    height: 40px;
+    left: 20px;
+    padding-top: 3px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+            padding-right: 20px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em; 
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+            .recipe-grid {
+                gap: 20px;
+            }
+
+            .recipe-card {
+                flex-direction: row;
+                width: 90%;
+                max-width: 600px;
+            }
+
+            .recipe-card img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .recipe-info h3 {
+                font-size: 1.2em;
+            }
+
+            .recipe-info p {
+                font-size: 1em;
+            }
+            footer {
+        padding: 10px 0; 
+        font-size: 0.85em; 
+    }
+
+    .footer-content p {
+        margin: 3px 0; 
+    }
+}
+
+
+        /* Media Query for Extra Small Screens (Max Width: 480px) */
+        @media (max-width: 480px) {
+            header {
+        padding: 10px;
+        position: fixed; 
+        top: 0;
+        width: 100%; 
+        z-index: 1000;
+        transition: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    }
+    .container img {
+        padding-top: 10px;
+        width: 50px;
+        height: auto;
+        left: 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 0.9em; 
+    }
+
+            .content-wrapper h1 {
+                font-size: 3.5em;
+                padding-top: 60px;
+            }
+
+            .recipe-grid {
+                gap: 10px;
+            }
+
+            .recipe-card {
+                flex-direction: row;
+                width: 90%;
+                max-width: 400px;
+            }
+
+            .recipe-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .recipe-info {
+                padding: 10px;
+            }
+
+            .recipe-info h3 {
+                font-size: 0.9em;
+            }
+
+            .recipe-info p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="cuisina-logo-copy.png" alt="cuisina-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <h1>Desserts</h1>
+        <div class="recipe-grid">
+            <a href="dessertsrecipes/bananacue.html" class="recipe-card">
+                <img src="bananacue.jpg" alt="Banana Cue">
+                <div class="recipe-info">
+                    <h3>Banana Cue</h3>
+                    <p>Caramelized fried bananas on a skewer, a popular Filipino street food dessert.</p>
+                </div>
+            </a>
+            <a href="dessertsrecipes/halo-halo.html" class="recipe-card">
+                <img src="halo-halo.jpg" alt="Halo Halo">
+                <div class="recipe-info">
+                    <h3>Halo-Halo</h3>
+                    <p>A refreshing mixed dessert with shaved ice, fruits, sweet beans, and leche flan.</p>
+                </div>
+            </a>
+            <a href="dessertsrecipes/lecheflan.html" class="recipe-card">
+                <img src="leche.png" alt="Leche Flan">
+                <div class="recipe-info">
+                    <h3>Leche Flan</h3>
+                    <p>A creamy caramel custard dessert made with egg yolks and condensed milk.</p>
+                </div>
+            </a>
+            <a href="dessertsrecipes/taho.html" class="recipe-card">
+                <img src="taho-filipino-sweet-tofu.jpeg" alt="Taho">
+                <div class="recipe-info">
+                    <h3>Taho</h3>
+                    <p>A sweet Filipino snack made with silken tofu, syrup, and tapioca pearls.</p>
+                </div>
+            </a>
+            <a href="dessertsrecipes/turon.html" class="recipe-card">
+                <img src="turon.webp" alt="Turon">
+                <div class="recipe-info">
+                    <h3>Turon</h3>
+                    <p>A sweet snack made by wrapping banana and sugar in spring roll wrappers and frying them.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 CUISINA. All rights reserved.</p>
+            <p>Sorsogon State University-Bulan Campus, Zone 8, Bulan, Sorsogon, Philippines</p>
+            <p>Email: support@mealkitdelivery.com | Phone: +63 914 312 3456</p>
+        </div>
+    </footer>
+</body>
+</html>

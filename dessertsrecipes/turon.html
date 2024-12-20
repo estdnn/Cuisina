@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turon Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0,0.1);
+        } 
+
+        .container img {
+            width: 90px;
+            height: 60px;
+            left: 50px;
+            top: 8px;
+            position: absolute;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 40px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #f0b207;
+            margin-bottom: 20px;
+            font-family: 'Century', sans-serif;
+            font-style: oblique;
+        }
+        .section {
+            text-align: left;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .section h2 {
+            font-size: 1.8em;
+            color: #333;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .section p {
+            text-align: center; 
+            margin: 0 auto; 
+            max-width: 900px; 
+            font-size: 1.5rem;
+        }
+        .ingredients, .steps {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left; 
+        }
+        .ingredients li, .steps li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .ingredients li {
+            font-weight: normal;
+        }
+        .steps li {
+            margin-top: 20px; 
+        }
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .text-content {
+            max-width: 60%;
+        }
+
+        .recipe-header h1 {
+            font-size: 4em;
+            color: rgb(240, 178, 8);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .recipe-header p {
+            font-size: 1.3em;
+            text-align: center;
+            margin-left: 50px;
+            max-width: 80%;
+        }
+
+        .recipe-header img {
+            max-width: 60%;
+            height: 500px; 
+            object-fit: cover;
+        }
+
+        .content-container {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .steps-section {
+            margin-top: 20px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+            margin: 0;  
+        }
+        .footer-content p {
+            margin: 5px 0;
+        }
+        /* Responsive styles */
+    @media (max-width: 768px) {
+        header {
+            padding: 5px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            width: 60px;
+            height: 40px;
+            left: 20px;
+            top: 5px;
+        }
+
+        nav ul {
+            padding-right: 20px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            font-size: 1em;
+        }
+
+        .recipe-header {
+            flex-direction: row;
+            max-width: 100%;
+            
+        }
+        .text-content {
+            max-width: 40%;
+            margin-bottom: 20px; 
+        }
+
+        .recipe-header h1 {
+            font-size: 3em;
+            color: rgb(240, 178, 8);
+            text-align: center;
+            padding-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        .recipe-header p {
+            font-size: 1em;
+            text-align: center;
+            margin-left: 20px;
+            max-width: 80%;
+        }
+
+        .recipe-header img {
+            padding-top: 20px;
+            max-width: 60%;
+        }
+
+        .section p {
+            font-size: 0.8rem;
+        }
+        .ingredients li, .steps li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .ingredients li {
+            font-weight: normal;
+        }
+        footer {
+        padding: 10px 0;
+        font-size: 0.85em; 
+    }
+
+    .footer-content p {
+        margin: 3px 0; 
+    }
+}
+
+    @media (max-width: 480px) {
+        header {
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            width: 50px;
+            height: auto;
+            left: 10px;
+            top: 5px;
+        }
+
+        nav ul {
+            padding-right: 10px;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            font-size: 0.9em;
+        }
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .text-content {
+            max-width: 60%;
+        }
+        .recipe-header img {
+            max-width: 60%;
+            height: auto;
+        }
+
+        .recipe-header h1 {
+            font-size: 1.6em;
+            color: rgb(240, 178, 8);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .recipe-header p {
+            font-size: 0.6em;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .content-container {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 1rem;
+        }
+        .ingredients li, .steps li {
+            margin-bottom: 15px;
+            font-size: 0.6em;
+        }
+        .ingredients li {
+            font-weight: normal;
+        }
+        footer {
+        padding: 15px 0; 
+        font-size: 0.8em; 
+    }
+
+    .footer-content p {
+        margin: 2px 0;
+        font-size: 0.8em;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../cuisina-logo-copy.png" alt="cuisina-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../gallery.html">Gallery</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="recipe-header">
+        <div class="text-content">
+            <h1>TURON</h1>
+            <p>Turon is a Filipino snack made of ripe saba bananas (a variety of plantain), jackfruit, and brown sugar, all wrapped in a spring roll wrapper and fried to crispy perfection. This sweet treat is often enjoyed as a merienda (afternoon snack) and is a favorite among street vendors in the Philippines.</p>
+        </div>
+        <img src="../turon.jpg" alt="Turon Dessert">
+    </div>
+
+    <div class="section">
+        <h2>Ingredients</h2>
+        <ul class="ingredients">
+            <li>4 ripe saba bananas, sliced into halves or thirds</li>
+            <li>1/2 cup jackfruit, sliced into strips (optional)</li>
+            <li>1/4 cup brown sugar</li>
+            <li>10-12 spring roll wrappers</li>
+            <li>Oil for frying</li>
+        </ul>
+    </div>
+
+    <div class="section steps-section">
+        <h2>Steps</h2>
+        <ul class="steps">
+            <li>Peel and slice the saba bananas into halves or thirds, depending on their size.</li>
+            <li>If using, slice the jackfruit into thin strips.</li>
+            <li>Place a spring roll wrapper on a flat surface, and sprinkle a little brown sugar in the center.</li>
+            <li>Place one slice of banana and a few strips of jackfruit (if using) on top of the sugar.</li>
+            <li>Fold the sides of the wrapper over the filling, then roll it up tightly, sealing the edges with a bit of water.</li>
+            <li>Heat oil in a frying pan over medium heat. Once hot, fry the turon, turning occasionally until the wrappers turn golden brown and crispy.</li>
+            <li>Once crispy, remove from the pan and drain on paper towels to remove excess oil.</li>
+            <li>Serve the turon while warm. The crispy wrapper and the sweet, caramelized banana and jackfruit filling make this treat irresistible!</li>
+        </ul>
+    </div>
+
+    <footer> 
+        <div class="footer-content"> 
+            <p>&copy; 2024 CUISINA. All rights reserved.</p> 
+            <p>Sorsogon State University-Bulan Campus, Zone 8, Bulan, Sorsogon, Philippines</p> 
+            <p>Email: support@mealkitdelivery.com | Phone: +63 963 677 1513</p>
+        </div>
+    </footer>
+</body>
+</html>

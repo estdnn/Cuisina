@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Dish - COOKBOOK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-size: cover;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            width: 90px;
+            height: 60px;
+            left: 50px;
+            top: 8px;
+            position: absolute;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 40px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            padding-bottom: 50px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+        }
+
+        .content-wrapper h1 {
+            font-size: 5em;
+            margin-bottom: 40px;
+        }
+
+        .recipe-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .recipe-card {
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+            width: 80%;
+            max-width: 800px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .recipe-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .recipe-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-info {
+            padding: 20px;
+            text-align: left;
+            flex: 1;
+        }
+
+        .recipe-info h3 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: #000;
+        }
+
+        .recipe-info p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        footer {
+            width: 100%;
+            background-color: grey;
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+                transition: none;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .container img {
+                padding-top: 1px;
+                width: 60px;
+                height: auto;
+                padding-left: 10px;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                padding: 0;
+                padding-right: 15px;
+            }
+
+            nav ul li {
+                margin: 0 20px;
+            }
+
+            nav ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 1em;
+            }
+
+            nav ul li a:hover {
+                text-decoration: underline;
+            }
+
+            .content-wrapper h1 {
+                font-size: 3.5em;
+                padding-top: 60px;
+            }
+
+            .recipe-grid {
+                gap: 20px;
+            }
+
+            .recipe-card {
+                flex-direction: row;
+                width: 90%;
+                max-width: 600px;
+                height: 120px;
+            }
+
+            .recipe-card img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .recipe-info h3 {
+                font-size: 1.2em;
+            }
+
+            .recipe-info p {
+                font-size: 1em;
+            }
+        }
+
+        footer {
+            padding: 10px 0;
+            font-size: 0.85em;
+        }
+
+        .footer-content p {
+            margin: 3px 0;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 10px;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+                transition: none;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .container img {
+                padding-top: 10px;
+                width: 50px;
+                height: auto;
+                left: 20px;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            nav ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 0.9em;
+            }
+
+            .content-wrapper h1 {
+                font-size: 3em;
+                padding-top: 60px;
+            }
+
+            .recipe-grid {
+                gap: 10px;
+            }
+
+            .recipe-card {
+                flex-direction: row;
+                width: 90%;
+                max-width: 400px;
+                height: 100px;
+            }
+
+            .recipe-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .recipe-info {
+                padding: 10px;
+            }
+
+            .recipe-info h3 {
+                font-size: 0.9em;
+            }
+
+            .recipe-info p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="cuisina-logo-copy.png" alt="cuisina-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <h1>Main Dish</h1>
+        <div class="recipe-grid">
+            <a href="maindish-recipes/sinigang.html" class="recipe-card">
+                <img src="sinigang-liempo.jpg" alt="Sinigang">
+                <div class="recipe-info">
+                    <h3>Sinigang</h3>
+                    <p>A tangy tamarind soup with pork ribs, vegetables, and a rich broth.</p>
+                </div>
+            </a>
+            <a href="maindish-recipes/sisig.html" class="recipe-card">
+                <img src="sisig.jpg" alt="Sisig">
+                <div class="recipe-info">
+                    <h3>Sizzling Sisig</h3>
+                    <p>A classic Filipino dish with chicken or pork marinated in vinegar, soy sauce, and spices.</p>
+                </div>
+            </a>
+            <a href="maindish-recipes/bicolexpress.html" class="recipe-card">
+                <img src="bicol-express-recipe-1.jpg" alt="Bicol Express">
+                <div class="recipe-info">
+                    <h3>Bicol Express</h3>
+                    <p>A spicy stew made with pork, chilies, and coconut milk.</p>
+                </div>
+            </a>
+            <a href="maindish-recipes/tinolangmanok.html" class="recipe-card">
+                <img src="chicken-tinola-sq.jpg" alt="Tinola">
+                <div class="recipe-info">
+                    <h3>Tinolang Manok</h3>
+                    <p>A hearty chicken soup with green papaya, chili leaves, and ginger broth.</p>
+                </div>
+            </a>
+            <a href="maindish-recipes/adobo.html" class="recipe-card">
+                <img src="adobo.jpg" alt="Adobo">
+                <div class="recipe-info">
+                    <h3>Adobo</h3>
+                    <p>A classic Filipino dish with chicken or pork marinated in vinegar, soy sauce, and spices.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 CUISINA. All rights reserved.</p>
+            <p>Sorsogon State University-Bulan Campus, Zone 8, Bulan, Sorsogon, Philippines</p>
+            <p>Email: support@mealkitdelivery.com | Phone: +63 914 312 3456</p>
+        </div>
+    </footer>
+</body>
+
+</html>

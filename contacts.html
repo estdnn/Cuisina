@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-image: url('background2.jfif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 25px 0;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0,0.1);
+        }
+
+        .container img {
+            width: 90px;
+            height: 60px;
+            left: 50px;
+            top: 8px;
+            position: absolute;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 40px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            margin-top: 100px;
+            width: 100%;
+        }
+
+        .card-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px;
+            margin-top: 90px;
+            margin-bottom: 90px;
+        }
+
+        .card-container h1 {
+            font-size: 3em;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+
+        .card-container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            width: 100%;
+            background-color: grey;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            header {
+        padding: 30px; 
+        position: fixed; 
+        top: 0;
+        width: 100%; 
+        z-index: 1000;
+        transition: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    }
+
+    .container img {
+        padding-top: 10px;
+        width: 60px; 
+        height: auto;
+        padding-left: 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+        padding-right: 15px;
+    }
+
+    nav ul li {
+        margin: 0 20px; 
+    }
+
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    footer {
+                padding: 10px 0;
+            }
+
+            .footer-content p {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 768px) {
+        header {
+            padding: 20px; 
+            position: fixed;
+            top: 0;
+            width: 100%; 
+            z-index: 1000;
+            transition: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .container img {
+            padding-top: 1px;
+            width: 60px; 
+            height: auto;
+            padding-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+            padding-right: 15px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em; 
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content-wrapper {
+            margin-top: 50px;
+        }
+
+        .card-container {
+            padding: 20px;
+            max-width: 80%;
+        }
+
+        .card-container h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .card-container p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        footer {
+        padding: 10px 0; 
+        font-size: 0.85em; 
+    }
+
+    .footer-content p {
+        margin: 3px 0; 
+    }
+}
+
+    @media (max-width: 480px) {
+            header {
+        padding: 30px; 
+        position: fixed; 
+        top: 0;
+        width: 100%; 
+        z-index: 1000;
+        transition: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    }
+    .container img {
+        padding-top: 10px;
+        width: 50px; 
+        height: auto;
+        left: 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav ul li {
+        margin: 0 10px; 
+    }
+
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 0.9em; 
+    }
+            .card-container h1 {
+                font-size: 1.5em;
+            }
+
+            .card-container p {
+                font-size: 0.9em;
+            }
+            footer {
+        padding: 15px 0; 
+        font-size: 0.8em; 
+    }
+
+    .footer-content p {
+        margin: 2px 0; 
+        font-size: 0.8em;
+    }
+}
+</style>
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="cuisina-logo-copy.png" alt="cuisina-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-wrapper">
+        <div class="card-container">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, suggestions, or feedback, feel free to reach out to us.</p>
+            <p><strong>Email:</strong> cuisina@gmail.com</p>
+            <p><strong>Phone:</strong> +63 914 312 3456</p>
+            <p><strong>Address:</strong> Sorsogon State University-Bulan Campus, Zone 8, Bulan, Sorsogon, Philippines</p>
+            <h2>Social Media</h2>
+            <p>Contact us on our social media for more</p>
+            <ul class="social-media">
+                <img src="facebook.png" alt="fb" onclick="location.href='https://www.facebook.com/SorSUBulan/'"> 
+                <img src="instagram.png" alt="ig" onclick="location.href='https://www.instagram.com/explore/locations/869528853111229/sorsogon-state-university/'"> 
+                <img src="twitter.png" alt="x" onclick="location.href='desserts.html'">
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 CUISINA. All rights reserved.</p>
+            <p>Sorsogon State University-Bulan Campus, Zone 8, Bulan, Sorsogon, Philippines</p>
+            <p>Email: support@mealkitdelivery.com | Phone: +63 914 312 3456</p>
+        </div>
+    </footer>
+</body>
+</html>
